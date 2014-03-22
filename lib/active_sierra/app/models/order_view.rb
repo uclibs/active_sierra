@@ -1,4 +1,4 @@
-class BibRecord < SierraTable
+class OrderView < SierraTable
 	self.table_name = 'order_view'
 	self.primary_key = 'id'
 

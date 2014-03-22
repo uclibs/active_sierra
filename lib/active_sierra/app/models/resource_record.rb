@@ -1,4 +1,4 @@
-class BibRecord < SierraTable
+class ResourceRecord < SierraTable
 	has_one :resource_view, foreign_key: 'id'
 
 	self.table_name = 'resource_record'

@@ -1,4 +1,4 @@
-class BibRecord < SierraTable
+class BibView < SierraTable
 	self.table_name = 'bib_view'
 	self.primary_key = 'id'
 
