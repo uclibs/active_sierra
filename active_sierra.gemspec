@@ -1,24 +1,24 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'active_sierra/version'
+$:.push File.expand_path("../lib", __FILE__)
 
-Gem::Specification.new do |spec|
-  spec.name          = "active_sierra"
-  spec.version       = ActiveSierra::VERSION
-  spec.authors       = ["James Van Mil"]
-  spec.authors       = ["James Van Mil", "Sean Crowe"]
-  spec.email         = ['vanmiljf@ucmail.uc.edu', 'crowesn@ucmail.uc.edu']
-  spec.summary       = %q{ActiveSierra gem}
-  spec.description   = %q{Connections and configurations for III Sierra database}
-  spec.homepage      = "https://github.com/uclibs/ActiveSierrra"
-  spec.license       = "MIT"
+# Maintain your gem's version:
+require "active_sierra/version"
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+# Describe your gem and declare its dependencies:
+Gem::Specification.new do |s|
+  s.name        = "active_sierra"
+  s.version     = ActiveSierra::VERSION
+  s.authors     = ["James Van Mil, Sean Crowe"]
+  s.email       = ["vanmilfj@ucmail.uc.edu, crowesn@ucmail.uc.edu"]
+  s.homepage    = "https://github.com/uclibs/active_sierra/"
+  s.summary     = "ActiveSierra gem"
+  s.description = "Connections and configuration for III Sierra database"
+  s.licenses = ["MIT"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.test_files = Dir["test/**/*"]
 
-  spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
+  s.add_dependency "rails", "~> 4.0.2"
+  s.add_dependency "pg"
+  #s.add_dependency "therubyracer"
+
+  s.add_development_dependency "sqlite3"
 end
