@@ -1,4 +1,4 @@
-class BibRecord < ActiveRecord::Base
+class BibRecord < SierraTable
 
 	has_one :bib_view, foreign_key: 'id'
 	has_many :bib_record_item_record_links

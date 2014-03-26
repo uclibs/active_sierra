@@ -1,4 +1,4 @@
-class ItemRecord < ActiveRecord::Base
+class ItemRecord < SierraTable
 #	establish_connection "#{Rails.env}_sierra"
 
 	has_many :bib_record_item_record_links

@@ -1,5 +1,4 @@
-class Varfield < ActiveRecord::Base
-#	establish_connection "#{Rails.env}_sierra"
+class Varfield < SierraTable
 
 	scope :field_content, ->(content) { where("field_content SIMILAR TO ?", content) }
 	scope :marc_tag, ->(marc_tag) { where("marc_tag = ?", marc_tag) }

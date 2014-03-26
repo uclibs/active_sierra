@@ -1,5 +1,4 @@
-class ResourceRecord < ActiveRecord::Base
-#	establish_connection "#{Rails.env}_sierra"
+class ResourceRecord < SierraTable
 
 	has_one :resource_view, foreign_key: 'id'
 

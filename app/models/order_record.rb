@@ -1,5 +1,4 @@
-class OrderRecord < ActiveRecord::Base
-#	establish_connection "#{Rails.env}_sierra"
+class OrderRecord < SierraTable
 
 	has_one :order_view, foreign_key: 'id'
 	has_many :varfields, foreign_key: 'record_id'
