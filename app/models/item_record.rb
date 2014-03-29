@@ -1,5 +1,5 @@
 class ItemRecord < SierraTable
-#	establish_connection "#{Rails.env}_sierra"
+	has_one :item_view, foreign_key: 'id'
 
 	has_many :bib_record_item_record_links
 	has_many :bib_records, through: :bib_record_item_record_links
