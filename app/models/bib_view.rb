@@ -1,13 +1,10 @@
 class BibView < SierraTable
+	has_many :varfield_views, foreign_key: 'record_id'
 	
 	self.table_name = 'bib_view'
 	self.primary_key = 'id'
 
 	def bib_record()
 		BibRecord.find(self.id)
-	end
-
-	def var_fields()
-		VarfieldView.record('b', self.record_num)
 	end
 end
