@@ -7,4 +7,16 @@ class BibView < SierraTable
 	def bib_record()
 		BibRecord.find(self.id)
 	end
+
+  def items()
+    items = Array.new
+    self.bib_record.item_records.each { |i| items << i.item_view }
+    items
+  end
+
+	def orders()
+    orders = Array.new
+    self.bib_record.order_records.each { |o| orders << o.order_view }
+    orders
+  end
 end
