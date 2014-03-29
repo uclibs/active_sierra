@@ -7,4 +7,8 @@ class OrderView < SierraTable
 	def order_record()
 		OrderRecord.find(self.id)
 	end
+
+	def var_fields()
+		VarfieldView.record('o', self.record_num)
+	end
 end
