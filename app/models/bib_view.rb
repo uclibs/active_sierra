@@ -1,6 +1,6 @@
 class BibView < SierraTable
 	has_many :varfield_views, foreign_key: 'record_id'
-	
+	has_one :bib_record, foreign_key: 'id'	
 	self.table_name = 'bib_view'
 	self.primary_key = 'id'
 

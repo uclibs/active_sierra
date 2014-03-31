@@ -15,4 +15,5 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+test/dummy/config/database.yml
 *.DS_Store
