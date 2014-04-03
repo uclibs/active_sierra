@@ -1,4 +1,5 @@
 class VarfieldView < SierraTable
+        has_one :item_view
 	has_many :subfields, foreign_key: 'varfield_id'
 
 	scope :field_content, ->(content) { where("field_content SIMILAR TO ?", content) }

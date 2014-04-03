@@ -1,21 +1,13 @@
 class OrderView < SierraTable 
-	has_many :varfield_views, foreign_key: 'record_id'
+  
+  has_many :varfield_views, foreign_key: 'record_id'
+  has_one :order_record, foreign_key: 'id'
+  has_one :bib_record, through: :order_record
+  has_one :bib_view, through: :bib_record
+  has_many :item_records, through: :bib_record
+  has_many :item_views, through: :item_records  
 
-	self.table_name = 'order_view'
-	self.primary_key = 'id'
+  self.table_name = 'order_view'
+  self.primary_key = 'id'
 
-	def order_record()
-		OrderRecord.find(self.id)
-	end
-
-	def first_bib_view()
-		# "first" because each order may have more than one linked bib record
-		self.order_record.bib_records[0].bib_view
-	end
-
-	def all_bib_views()
-		list = Array.new
-		self.order_record.bib_records.each { |b| list << b.bib_view }
-		list
-	end
 end
