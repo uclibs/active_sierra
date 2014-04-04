@@ -7,6 +7,7 @@ class ItemRecord < SierraTable
   has_many :varfield_views, foreign_key: :record_id
   has_many :order_records, through: :bib_records
   has_many :order_views, through: :order_records
+  has_one :record_metadata, foreign_key: 'id'
 
   self.table_name = 'item_record'
   self.primary_key = 'record_id'

@@ -6,6 +6,7 @@ class BibView < SierraTable
   has_many :item_views, through: :item_records
   has_many :order_records, through: :bib_record
   has_many :order_views, through: :order_records
+  has_one :record_metadata, foreign_key: 'id'
 
   self.table_name = 'bib_view'
   self.primary_key = 'id'
