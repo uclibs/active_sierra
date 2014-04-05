@@ -46,3 +46,7 @@ All records have attached variable fields, expressed through the VarfieldViews m
 And variable fields each have sub-fields:
 
     v.subfields
+
+The \*View/\*Record types also have creation\deletion data in an associated table:
+
+    b.record_metadata
