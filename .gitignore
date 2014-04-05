@@ -16,4 +16,5 @@ test/tmp
 test/version_tmp
 tmp
 test/dummy/config/database.yml
+/test/dummy/log/
 *.DS_Store
