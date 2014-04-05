@@ -1,6 +1,6 @@
 # ActiveSierra
 
-TODO: Write a gem description
+A Rails engine with models for the Innovative Interfaces Inc. Sierra integrated library system Postgresql database backend. 
 
 ## Installation
 
@@ -16,14 +16,33 @@ Or install it yourself as:
 
     $ gem install active_sierra
 
+Additionally, add 'sierra' to your config/database.yml, to connect to your local database
+
 ## Usage
 
-TODO: Write usage instructions here
+The engine provides models for major records types in the Sierra database, per the [SierraDNA documentation](http://techdocs.iii.com/sierradna/app) (authentication required).
 
-## Contributing
+Record models currently include:
+- BibView
+- ItemView
+- OrderView
+- VarfieldViews
+- Subfields
 
-1. Fork it ( http://github.com/<my-github-username>/active_sierra/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+BibRecord, ItemRecord, and OrderRecord are also included because they respond more quickly to certain queries
+
+Relationships between records are included, e.g.:
+
+    b = BibView.first
+		i = b.item_views
+		b = i.bib_views ## Returns all attached bib records (items can have more than one attached bib record)
+		o = OrderView.first
+		b = o.bib_view ## Returns single attached bib record (orders, and checkins can only have one attached bib)
+
+All records have attached variable fields, expressed through the VarfieldViews model:
+
+		v = b.varfield_views
+
+And variable fields each have sub-fields:
+
+$ v.subfields
