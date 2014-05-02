@@ -16,7 +16,19 @@ Or install it yourself as:
 
     $ gem install active_sierra
 
-Additionally, add 'sierra' to your config/database.yml, to connect to your local database
+Additionally, add 'sierra' to your config/database.yml, to connect to your local database:
+
+    sierra:
+        adapter: postgresql
+        database: iii
+        host: your_database_url
+        port: your_database_port
+        schema_search_path: sierra_view
+        pool: 5
+        timeout: 5000
+        username: your_username
+        password: your_password
+        sslmode: require
 
 ## Usage
 
