@@ -12,4 +12,11 @@ class VarfieldView < SierraTable
 
 	self.table_name = 'varfield_view'
 	self.primary_key = 'id'
+
+  def clean()
+        return nil if self.nil?
+        field = self["field_content"].gsub(/\|[af]/, '')
+        field.gsub(/\|[b-z]/, ' ')
+  end
+
 end
