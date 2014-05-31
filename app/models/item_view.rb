@@ -1,5 +1,4 @@
 class ItemView < SierraTable
-
   has_many :varfield_views, foreign_key: 'record_id'
   has_one :item_record, foreign_key: 'id'
   has_many :bib_records, through: :item_record
@@ -12,5 +11,4 @@ class ItemView < SierraTable
 
   self.table_name = 'item_view'
   self.primary_key = 'id'
-
 end
