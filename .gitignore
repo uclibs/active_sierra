@@ -18,3 +18,4 @@ tmp
 test/dummy/config/database.yml
 /test/dummy/log/
 *.DS_Store
+tags
