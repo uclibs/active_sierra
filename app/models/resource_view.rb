@@ -5,5 +5,4 @@ class ResourceView < SierraTable
 
   self.table_name = 'resource_view'
   self.primary_key = 'id'
-
 end

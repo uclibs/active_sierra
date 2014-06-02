@@ -1,5 +1,4 @@
 class OrderRecord < SierraTable
-
   has_one :order_view, foreign_key: 'id'
   has_one :bib_record_order_record_link
   has_one :bib_record, through: :bib_record_order_record_link
@@ -11,5 +10,4 @@ class OrderRecord < SierraTable
 
   self.table_name = 'order_record'
   self.primary_key = 'record_id'
-
 end

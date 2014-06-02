@@ -1,5 +1,4 @@
 class Subfield < SierraTable
-  
   scope :content, ->(content) { where("content SIMILAR TO ?", content) }
   scope :marc_tag, ->(marc_tag) { where("marc_tag = ?", marc_tag) }
   scope :marc_ind1, ->(marc_ind1) { where("marc_ind1 = ?", marc_ind1) }
@@ -11,5 +10,4 @@ class Subfield < SierraTable
 
   self.table_name = 'subfield'
   self.primary_key = 'record_id'
-
 end
