@@ -7,6 +7,7 @@ class SubfieldView < SierraTable
   scope :record_number, ->(type, number) { where("record_type_code = ? and record_num = ?", type, number) }     
   scope :tag, ->(tag) { where("tag = ?", tag) }
   scope :field_type_code, ->(code) { where("field_type_code = ?", code) }
+  scope :record_type_code, ->(code) { where("record_type_code = ?", code) }
 
   self.table_name = 'subfield_view'
   self.primary_key = 'record_id'
