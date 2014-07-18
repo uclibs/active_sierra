@@ -9,6 +9,7 @@ class VarfieldView < SierraTable
   scope :record_id, ->(number) { where("record_id = ?", number) }
   scope :record_number, ->(type, number) { where("record_type_code = ? and record_num = ?", type, number) }  
   scope :varfield_type_code, ->(code) { where("varfield_type_code = ?", code) }
+  scope :record_type_code, ->(code) { where("record_type_code = ?", code) }
 
   self.table_name = 'varfield_view'
   self.primary_key = 'id'
