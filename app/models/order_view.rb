@@ -7,7 +7,6 @@ class OrderView < SierraTable
   has_many :item_records, through: :bib_record
   has_many :item_views, through: :item_records  
   has_one :record_metadata, foreign_key: 'id'
-  has_many :order_record_paids, foreign_key: 'order_record_id'
 
   self.table_name = 'order_view'
   self.primary_key = 'id'
