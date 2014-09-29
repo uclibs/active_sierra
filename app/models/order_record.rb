@@ -7,6 +7,7 @@ class OrderRecord < SierraTable
   has_many :item_views, through: :item_records
   has_many :varfield_views, foreign_key: 'record_id'
   has_one :record_metadata, foreign_key: 'id'
+  has_one :order_record_cmf, foreign_key: 'order_record_id'
 
   self.table_name = 'order_record'
   self.primary_key = 'record_id'
