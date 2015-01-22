@@ -9,6 +9,7 @@ class OrderRecord < SierraTable
   has_one :record_metadata, foreign_key: 'id'
   has_one :order_record_cmf, foreign_key: 'order_record_id'
   has_many :order_record_paids, foreign_key: 'order_record_id'
+  has_one :invoice_record_line, foreign_key: 'order_record_metadata_id'
 
   self.table_name = 'order_record'
   self.primary_key = 'record_id'
